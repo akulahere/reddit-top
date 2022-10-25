@@ -16,7 +16,8 @@ protocol ViewControllerPresenterInput {
 }
 
 protocol ViewControllerPresenterOutput: AnyObject {
-  func showLoader(isLoading: Bool)
+//  func showLoader(isLoading: Bool)
+  var tableView: UITableView! { get }
 }
 
 class ViewControllerPresenter: ViewControllerPresenterInput {
@@ -55,7 +56,11 @@ class ViewControllerPresenter: ViewControllerPresenterInput {
         threads.forEach {
           thread in self.redditThreads.append(thread.data)
         }
-            print(self.redditThreads)
+        DispatchQueue.main.async {
+          print("Reload data")
+          print(self.redditThreads.count)
+          self.output?.tableView.reloadData()
+        }
       }
   }
 }
