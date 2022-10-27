@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
 
 class ViewController: UIViewController, ViewControllerPresenterOutput {
   lazy var presenter = ViewControllerPresenter(output: self)
@@ -18,8 +19,10 @@ class ViewController: UIViewController, ViewControllerPresenterOutput {
     super.viewDidLoad()
     // func - showLoader - true
     presenter.fetchData()
-    tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 200
+//    tableView.rowHeight = UITableView.automaticDimension
+//    tableView.estimatedRowHeight = 200
+    let cellNib = UINib(nibName: "RedditThreadTableViewCell", bundle: nil)
+    tableView.register(cellNib, forCellReuseIdentifier: "RedditThreadCell")
   }
   
   func updateList() {
@@ -40,7 +43,11 @@ extension ViewController: UITableViewDataSource {
       let redditThread = presenter.redditThreads[indexPath.row]
       cell.titleLabel.text = redditThread.title
       cell.subredditLabel.text = redditThread.subReddit
-      print("Trying to print cell")
+      if let image = redditThread.image {
+        let url = URL(string: image)
+        cell.threadImageView.kf.setImage(with: url)
+      }
+
     }
     return cell
   }
@@ -51,9 +58,5 @@ extension ViewController: UITableViewDataSource {
 }
 
 
-class RedditThreadTableViewCell: UITableViewCell {
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var subredditLabel: UILabel!
 
-}
 
