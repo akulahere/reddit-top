@@ -18,6 +18,7 @@ protocol ViewControllerPresenterInput {
 protocol ViewControllerPresenterOutput: AnyObject {
 //  func showLoader(isLoading: Bool)
   var tableView: UITableView! { get }
+  func updateList()
 }
 
 class ViewControllerPresenter: ViewControllerPresenterInput {
@@ -30,25 +31,6 @@ class ViewControllerPresenter: ViewControllerPresenterInput {
     self.output = vc
   }
   
-  // func startApp() { }
-  
-  
-  
-//  func fetchData() async {
-//    output?.showLoader(isLoading: true)
-//    print("\(Thread.isMainThread)")
-//    let response = await AF.request(url).serializingDecodable(RedditResponse.self).response
-//    guard let threads = response.value?.data.children else { return }
-//    threads.forEach { thread in
-//      self.redditThreads.append(thread.data)
-//    }
-//    print("\(Thread.isMainThread)")
-//    output?.showLoader(isLoading: true)
-//
-//    await MainActor.run {
-//      print(self.redditThreads)
-//    }
-    
   func fetchData() {
     AF.request(url)
       .responseDecodable(of: RedditResponse.self) { (response) in
@@ -59,7 +41,7 @@ class ViewControllerPresenter: ViewControllerPresenterInput {
         DispatchQueue.main.async {
           print("Reload data")
           print(self.redditThreads.count)
-          self.output?.tableView.reloadData()
+          self.output?.updateList()
         }
       }
   }
