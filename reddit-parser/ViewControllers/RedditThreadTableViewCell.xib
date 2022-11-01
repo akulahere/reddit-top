@@ -26,11 +26,11 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujz-lT-m9f">
                         <rect key="frame" x="80" y="8" width="302" height="38"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subreddit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-x4-m2f">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subreddit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIt-x4-m2f">
                         <rect key="frame" x="80" y="54" width="302" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" systemColor="opaqueSeparatorColor"/>
@@ -41,7 +41,7 @@
                     <constraint firstItem="cTv-m2-ULo" firstAttribute="leading" secondItem="7iB-NG-Mmr" secondAttribute="leading" constant="8" id="2VI-sf-uu3"/>
                     <constraint firstItem="gIt-x4-m2f" firstAttribute="top" secondItem="Ujz-lT-m9f" secondAttribute="bottom" constant="8" symbolic="YES" id="3cn-z5-jpp"/>
                     <constraint firstAttribute="trailing" secondItem="Ujz-lT-m9f" secondAttribute="trailing" constant="8" id="4NY-ah-35B"/>
-                    <constraint firstAttribute="bottom" secondItem="cTv-m2-ULo" secondAttribute="bottom" constant="8" id="4ib-Qg-Nk6"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cTv-m2-ULo" secondAttribute="bottom" constant="8" id="8E4-ah-jkH"/>
                     <constraint firstItem="cTv-m2-ULo" firstAttribute="top" secondItem="7iB-NG-Mmr" secondAttribute="top" constant="8" id="EV3-ey-5yx"/>
                     <constraint firstAttribute="trailing" secondItem="gIt-x4-m2f" secondAttribute="trailing" constant="8" id="GfB-uQ-5CP"/>
                     <constraint firstItem="Ujz-lT-m9f" firstAttribute="leading" secondItem="cTv-m2-ULo" secondAttribute="trailing" constant="8" id="HwD-H4-aOW"/>

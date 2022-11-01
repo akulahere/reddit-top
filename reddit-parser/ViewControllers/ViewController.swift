@@ -19,10 +19,12 @@ class ViewController: UIViewController, ViewControllerPresenterOutput {
     super.viewDidLoad()
     // func - showLoader - true
     presenter.fetchData()
-//    tableView.rowHeight = UITableView.automaticDimension
-//    tableView.estimatedRowHeight = 200
     let cellNib = UINib(nibName: "RedditThreadTableViewCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "RedditThreadCell")
+    tableView.rowHeight = UITableView.automaticDimension
+    tableView.estimatedRowHeight = 200
+//    tableView.separatorStyle = .singleLine
+    
   }
   
   func updateList() {
@@ -38,16 +40,16 @@ extension ViewController: UITableViewDataSource {
   ) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(
       withIdentifier: "RedditThreadCell", for: indexPath)
-    
+//    cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+
     if let cell = cell as? RedditThreadTableViewCell {
       let redditThread = presenter.redditThreads[indexPath.row]
       cell.titleLabel.text = redditThread.title
       cell.subredditLabel.text = redditThread.subReddit
-      if let image = redditThread.image {
+      if let image = redditThread.image, image.contains("https://b.thumbs.redditmedia.com/") {
         let url = URL(string: image)
         cell.threadImageView.kf.setImage(with: url)
       }
-
     }
     return cell
   }
