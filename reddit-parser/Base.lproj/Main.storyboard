@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JYy-nd-Md7">
-                                <rect key="frame" x="20" y="48" width="374" height="814"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <color key="separatorColor" systemColor="separatorColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Nsh-eH-6Sk"/>
@@ -28,8 +28,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JYy-nd-Md7" secondAttribute="trailing" constant="20" id="5oW-6q-PrQ"/>
-                            <constraint firstItem="JYy-nd-Md7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ntv-zH-0d9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JYy-nd-Md7" secondAttribute="trailing" id="5oW-6q-PrQ"/>
+                            <constraint firstItem="JYy-nd-Md7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ntv-zH-0d9"/>
                             <constraint firstItem="JYy-nd-Md7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZV2-q4-Rbb"/>
                             <constraint firstItem="JYy-nd-Md7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="inj-uP-3Sd"/>
                         </constraints>
