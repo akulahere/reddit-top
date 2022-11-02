@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		66CEED5BEAF70857EB70DB7A /* Pods_reddit_parser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C682E910260F3F95604156 /* Pods_reddit_parser.framework */; };
+		9411FB3829129B960036E6C0 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9411FB3729129B960036E6C0 /* SpinnerViewController.swift */; };
 		948D319E290A9E450086158D /* RedditThreadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 948D319D290A9E450086158D /* RedditThreadTableViewCell.xib */; };
 		94A4CDA528F6E16600BA8C5C /* RedditThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A4CDA428F6E16600BA8C5C /* RedditThread.swift */; };
 		94A4CDAB28F70A6300BA8C5C /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A4CDAA28F70A6300BA8C5C /* ViewControllerPresenter.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9411FB3729129B960036E6C0 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		948D319D290A9E450086158D /* RedditThreadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedditThreadTableViewCell.xib; sourceTree = "<group>"; };
 		94A4CDA428F6E16600BA8C5C /* RedditThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditThread.swift; sourceTree = "<group>"; };
 		94A4CDAA28F70A6300BA8C5C /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				94DB2FA528EEF48200060A4C /* ViewController.swift */,
 				94E60F6A290A996100A83477 /* RedditThreadTableViewCell.swift */,
 				948D319D290A9E450086158D /* RedditThreadTableViewCell.xib */,
+				9411FB3729129B960036E6C0 /* SpinnerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				94DB2FA628EEF48200060A4C /* ViewController.swift in Sources */,
 				94E60F6B290A996100A83477 /* RedditThreadTableViewCell.swift in Sources */,
 				94DB2FA228EEF48200060A4C /* AppDelegate.swift in Sources */,
+				9411FB3829129B960036E6C0 /* SpinnerViewController.swift in Sources */,
 				94A4CDAB28F70A6300BA8C5C /* ViewControllerPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import Alamofire
 protocol ViewControllerPresenterInput {
 //  func fetchData() async
   func fetchData()
-
+  
   var redditThreads: [RedditThread] { get }
 }
 
@@ -19,6 +19,8 @@ protocol ViewControllerPresenterOutput: AnyObject {
 //  func showLoader(isLoading: Bool)
   var tableView: UITableView! { get }
   func updateList()
+  func startLoading()
+  func stopLoading()
 }
 
 class ViewControllerPresenter: ViewControllerPresenterInput {
@@ -32,6 +34,7 @@ class ViewControllerPresenter: ViewControllerPresenterInput {
   }
   
   func fetchData() {
+    self.output?.startLoading()
     AF.request(url)
       .responseDecodable(of: RedditResponse.self) { (response) in
       guard let threads = response.value?.data.children else { return }
@@ -39,9 +42,8 @@ class ViewControllerPresenter: ViewControllerPresenterInput {
           thread in self.redditThreads.append(thread.data)
         }
         DispatchQueue.main.async {
-          print("Reload data")
-          print(self.redditThreads.count)
           self.output?.updateList()
+          self.output?.stopLoading()
         }
       }
   }

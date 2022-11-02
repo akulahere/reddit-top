@@ -11,6 +11,8 @@ import Kingfisher
 
 class ViewController: UIViewController, ViewControllerPresenterOutput {
   lazy var presenter = ViewControllerPresenter(output: self)
+  let loader = SpinnerViewController()
+
   
   @IBOutlet weak var tableView: UITableView!
 
@@ -18,17 +20,39 @@ class ViewController: UIViewController, ViewControllerPresenterOutput {
   override func viewDidLoad() {
     super.viewDidLoad()
     // func - showLoader - true
+    
     presenter.fetchData()
     let cellNib = UINib(nibName: "RedditThreadTableViewCell", bundle: nil)
     tableView.register(cellNib, forCellReuseIdentifier: "RedditThreadCell")
     tableView.rowHeight = UITableView.automaticDimension
-    tableView.estimatedRowHeight = 200
-//    tableView.separatorStyle = .singleLine
-    
+    tableView.estimatedRowHeight = 200    
   }
   
   func updateList() {
     tableView.reloadData()
+  }
+  
+  
+  func startLoading() {
+    showLoader(needToShow: true)
+  }
+  
+  func stopLoading() {
+    showLoader(needToShow: false)
+  }
+  
+  func showLoader(needToShow: Bool) {
+    if needToShow == true {
+      addChild(loader)
+      loader.view.frame = view.frame
+      view.addSubview(loader.view)
+      loader.didMove(toParent: self)
+    } else {
+      print("try to remove")
+      loader.willMove(toParent: nil)
+      loader.view.removeFromSuperview()
+      loader.removeFromParent()
+    }
   }
 }
 
@@ -40,8 +64,6 @@ extension ViewController: UITableViewDataSource {
   ) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(
       withIdentifier: "RedditThreadCell", for: indexPath)
-//    cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-
     if let cell = cell as? RedditThreadTableViewCell {
       let redditThread = presenter.redditThreads[indexPath.row]
       cell.titleLabel.text = redditThread.title
