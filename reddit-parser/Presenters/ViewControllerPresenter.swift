@@ -5,18 +5,15 @@
 //  Created by Dmytro Akulinin on 12.10.2022.
 //
 
-import Foundation
 import Alamofire
 
 protocol ViewControllerPresenterInput {
-//  func fetchData() async
   func fetchData()
   
   var redditThreads: [RedditThread] { get }
 }
 
 protocol ViewControllerPresenterOutput: AnyObject {
-//  func showLoader(isLoading: Bool)
   var tableView: UITableView! { get }
   func updateList()
   func startLoading()
